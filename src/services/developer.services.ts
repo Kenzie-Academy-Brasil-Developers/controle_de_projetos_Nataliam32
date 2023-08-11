@@ -7,7 +7,7 @@ const create = async (payload: DeveloperCreate): Promise<Developer> => {
         'INSERT INTO developers (%I) VALUES (%L) RETURNING *;',
         Object.keys(payload),
         Object.values(payload)
-    )
+    );
     
     const query: DeveloperResult = await client.query(queryFormat);
     return query.rows[0];

@@ -11,7 +11,7 @@ const verifyDevInfoExists = async (req: Request, res: Response, next: NextFuncti
 
     if(query.rowCount !== 0) {
         throw new AppError('DevInfos already exists.', 409);
-    }
+    };
 
     return next();
 }

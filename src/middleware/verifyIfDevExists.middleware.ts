@@ -15,7 +15,8 @@ const verifyIfDevExists = async (req: Request, res: Response, next: NextFunction
 
     if(!developer){
         throw new AppError("Developer not found.", 404)
-    }
+    };
+    
     return next();
 };
 

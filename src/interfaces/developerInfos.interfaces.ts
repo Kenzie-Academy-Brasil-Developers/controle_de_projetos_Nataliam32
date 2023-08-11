@@ -5,7 +5,7 @@ interface DeveloperInfos {
     developerSince: Date,
     preferredOS: "windows" | "linux" | "macos",
     developerId: number
-}
+};
 
 type DeveloperInfosCreate = Omit<DeveloperInfos, "id">;
 type DeveloperInfosResult = QueryResult<DeveloperInfos>;

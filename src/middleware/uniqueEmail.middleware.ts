@@ -12,6 +12,7 @@ const uniqueEmail = async (req: Request, res: Response, next: NextFunction): Pro
         `SELECT * FROM developers WHERE "email" = $1;`,
         [email]
     );
+    
     if(query.rowCount != 0){
         throw new AppError("Email already exists.", 409);
     } 

@@ -17,7 +17,7 @@ const verifyIfProjectExists = async (req: Request, res: Response, next: NextFunc
 
     if(query.rowCount === 0) {
         throw new AppError("Project not found.", 404);
-    }
+    };
 
     return next();
 };

@@ -11,6 +11,6 @@ const create = async (payload: DeveloperCreate): Promise<DeveloperInfos> => {
 
     const query: DeveloperInfosResult = await client.query(queryFormat);
     return query.rows[0]
-}
+};
 
 export default { create };
