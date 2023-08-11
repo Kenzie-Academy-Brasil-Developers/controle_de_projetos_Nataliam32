@@ -4,8 +4,8 @@ import middleware from "../middleware";
 
 const projectRouter: Router = Router();
 
-projectRouter.post("", projectController.create);
-projectRouter.get("/:id", middleware.verifyIfProjectExists, projectController.retrieve);
-projectRouter.patch("/:id", middleware.verifyIfProjectExists, projectController.update);
+projectRouter.post("", middleware.verifyIfDevExists, projectController.create);
+projectRouter.get("/:id", middleware.verifyIfProjectExists, middleware.verifyIfProjectExists, projectController.retrieve);
+projectRouter.patch("/:id", middleware.verifyIfDevExists, middleware.verifyIfProjectExists, projectController.update);
 
 export default projectRouter;

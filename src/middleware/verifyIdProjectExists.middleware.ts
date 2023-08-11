@@ -1,17 +1,17 @@
 import { Request, Response, NextFunction } from "express";
-import { ProjectResult } from "../interfaces";
+import { DeveloperInfosResult } from "../interfaces";
 import AppError from "../error";
 import { client } from "../database";
 
 const verifyIfProjectExists = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const {userId} = req.body;
+    const userId  = req.params.id;
 
     if(!userId) {
         return next();
     }
 
-    const query: ProjectResult = await client.query(
-        'SELECT * FROM "projects" WHERE "id" = $1;',
+    const query: DeveloperInfosResult = await client.query(
+        `SELECT * FROM projects WHERE "id" = $1;`,
         [userId]
     );
 
