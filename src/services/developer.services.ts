@@ -4,7 +4,7 @@ import { client } from "../database";
 
 const create = async (payload: DeveloperCreate): Promise<Developer> => {
     const queryFormat: string = format(
-        'INSERT INTO "developers" (%I) VALUES (%L) RETURNING *;',
+        'INSERT INTO developers (%I) VALUES (%L) RETURNING *;',
         Object.keys(payload),
         Object.values(payload)
     )
